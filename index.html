@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joseph Charitable Trust | Charity Foundation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #b85f20; 
+            --secondary: #D2691E; 
+            --accent: #CD853F; 
+            --light: #f4bf89; 
+            --dark: #2F1B0C; 
+            --success: #228B22; 
+            --warning: #FF8C00; 
+            --danger: #B22222; 
+            --gray: #696969;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(205, 133, 63, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 20%);
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--secondary);
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        .btn-secondary:hover {
+            background: #e6b17e;
+            color: var(--dark);
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--primary);
+            font-size: 2.2rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+       
+        header {
+            background-color: var(--light);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo h1 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            color: var(--dark);
+            transition: var(--transition);
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+       
+        .hero {
+            background: linear-gradient(rgba(47, 27, 12, 0.7), rgba(47, 27, 12, 0.7)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .about-text p {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .mission-vision {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .mission, .vision {
+            flex: 1;
+            min-width: 300px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .mission:hover, .vision:hover {
+            transform: translateY(-5px);
+        }
+
+        .mission h3, .vision h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .mission p, .vision p {
+            color: var(--dark);
+            font-size: 1.05rem;
+        }
+
+        .mission i, .vision i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .services {
+            background-color: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-size: 1.4rem;
+        }
+
+        .service-content p {
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+      
+        .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 25px;
+            min-width: 200px;
+            transition: var(--transition);
+        }
+
+        .stat:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 1.2rem;
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .team {
+            background-color: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-member {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .team-member:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-img {
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .team-member:hover .member-img img {
+            transform: scale(1.05);
+        }
+
+        .member-info {
+            padding: 25px;
+        }
+
+        .member-info h3 {
+            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+
+        .member-role {
+            color: var(--secondary);
+            font-style: italic;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .member-info p {
+            color: var(--dark);
+            font-size: 1.05rem;
+        }
+
+        /* Get Involved Section */
+        .involvement-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .involvement-card {
+            background: white;
+            border-radius: 10px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent);
+        }
+
+        .involvement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .involvement-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .involvement-card p {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .involvement-card i {
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+        }
+
+        /* Donate Section */
+        .donation-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .donation-option {
+            background: white;
+            border-radius: 10px;
+            padding: 35px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid var(--secondary);
+        }
+
+        .donation-option:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .donation-option h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .donation-option p {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .donation-option i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .donation-amounts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+
+        .amount-option {
+            padding: 12px 22px;
+            background: white;
+            border: 2px solid var(--primary);
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .amount-option.active, .amount-option:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .transparency-section {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-top: 50px;
+        }
+
+        .transparency-section h3 {
+            color: var(--primary);
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .transparency-section p {
+            color: var(--dark);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .transparency-chart {
+            display: flex;
+            height: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 30px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.7rem;
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 240px;
+            position: relative;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(139, 69, 19, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .contact-info p {
+            color: var(--dark);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        .contact-details {
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            color: rgb(80, 64, 64);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .contact-item h4 {
+            color: rgb(48, 40, 40);
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item p {
+            color: rgb(55, 46, 46);
+            margin-bottom: 0;
+            font-size: 1.05rem;
+        }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background: rgb(78, 63, 63);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            color: rgb(155, 127, 127);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.05rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+            color: var(--dark);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 160px;
+            resize: vertical;
+        }
+
+        .map-container {
+            height: 400px;
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 40px;
+            margin-right: 12px;
+        }
+
+        .footer-logo h3 {
+            color: var(--accent);
+            font-size: 1.4rem;
+            margin: 0;
+        }
+
+        .footer-column h4 {
+            color: var(--accent);
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .footer-column p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+            font-size: 1.05rem;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .contact-info {
+            margin-top: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 18px;
+        }
+
+        .contact-item i {
+            font-size: 1.1rem;
+            color: var(--accent);
+            margin-right: 12px;
+            margin-top: 3px;
+            width: 20px;
+        }
+
+        .contact-item p {
+            color: rgba(141, 102, 102, 0.8);
+            margin: 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+            color: white;
+            font-size: 1.1rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .newsletter-form {
+            margin-top: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+            color: var(--dark);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(205, 133, 63, 0.3);
+            background: white;
+        }
+
+        .form-control::placeholder {
+            color: #888;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 0;
+        }
+
+        .footer-bottom-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            font-size: 0.95rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links-bottom {
+            display: flex;
+            gap: 25px;
+        }
+
+        .footer-links-bottom a {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .footer-links-bottom a:hover {
+            color: var(--accent);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.8rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                right: 0;
+            }
+
+            .nav-menu li {
+                margin: 20px 0;
+            }
+
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            
+            .footer-bottom-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links-bottom {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 160px 0 80px;
+            }
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            footer {
+                padding: 50px 0 0;
+            }
+            
+            .footer-links-bottom {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        /* Utility Classes */
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjOEI0NTEzIiBkPSJNMjU2IDQ4QzE0MS4xIDQ4IDQ4IDE0MS4xIDQ4IDI1NnM5My4xIDIwOCAyMDggMjA4IDIwOC05My4xIDIwOC0yMDhTMzcwLjkgNDggMjU2IDQ4em0tMjQuMiAxODUuNGMtMjEuOCA0My4zLTQzLjMgODYuNi02NS4xIDEyOS45LTMuMyA2LjYgMS42IDE0LjUgOS4xIDE0LjVoMjEuOGM0LjYgMCA4LjktMi41IDExLjItNi42bDUxLjUtMTAyLjkgNTEuNSAxMDIuOWMyLjMgNC4xIDYuNiA2LjYgMTEuMiA2LjZoMjEuOGM3LjUgMCAxMi40LTcuOSA5LjEtMTQuNS0yMS44LTQzLjMtNDMuMy04Ni42LTY1LjEtMTI5LjktMy4zLTYuNi0xMi45LTYuNi0xNi4yIDB6bTI0LjItMTE2Yy0xOS44IDAtMzYgMTYuMi0zNiAzNnMxNi4yIDM2IDM2IDM2IDM2LTE2LjIgMzYtMzYtMTYuMi0zNi0zNi0zNnptMTQ0IDI1NmMtMTkuOCAwLTM2IDE2LjItMzYgMzZzMTYuMiAzNiAzNiAzNiAzNi0xNi4yIDM2LTM2LTE2LjItMzYtMzYtMzZ6Ii8+PC9zdmc+" alt="Joseph Charitable Trust Logo">
+                <h1>Joseph Charitable Trust</h1>
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#work">Our Work</a></li>
+                    <li><a href="#involve">Get Involved</a></li>
+                    <li><a href="#donate">Donate</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Bringing Hope and Changing Lives</h2>
+            <p>Joseph Charitable Trust Foundation is dedicated to providing essential services to underprivileged communities through food distribution, medical assistance, education programs, and social services.</p>
+            <div class="hero-btns">
+                <a href="#donate" class="btn">Donate Now</a>
+                <a href="#involve" class="btn btn-secondary">Volunteer Today</a>
+                <a href="#about" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Joseph Charitable Trust</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2005, Joseph Charitable Trust began as a small community initiative in response to the devastating effects of natural disasters in our region. What started as a temporary relief effort has grown into a comprehensive charity organization serving thousands of people annually.</p>
+                    <p>Our journey began when our founders, Dr. Shiny Reddy and Dr. Ravali, witnessed the plight of families affected by floods and decided to take action. They mobilized local resources and volunteers to provide immediate assistance, and soon realized the need for sustained support in these communities.</p>
+                    <p>Today, we operate in over 50 communities across three states, with a dedicated team of staff and volunteers working tirelessly to bring positive change to those who need it most.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://media.istockphoto.com/id/1472567934/photo/god-helping-hand-concept-and-international-day-of-peace.jpg?s=612x612&w=0&k=20&c=1vqP1lkwFHQMTdaYaBXbjBIsyhWXToXEFxI4W1Zb3ps=" alt="Joseph Charitable Trust Team">
+                </div>
+            </div>
+            <div class="mission-vision">
+                <div class="mission">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Our Mission</h3>
+                    <p>To alleviate suffering and empower underprivileged communities by providing essential services, education, and opportunities for sustainable development.</p>
+                </div>
+                <div class="vision">
+                    <i class="fas fa-eye"></i>
+                    <h3>Our Vision</h3>
+                    <p>A world where every individual has access to basic necessities, quality education, healthcare, and the opportunity to reach their full potential.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="work" class="section services">
+        <div class="container">
+            <h2 class="section-title">Our Programs & Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Food Distribution">
+                    </div>
+                    <div class="service-content">
+                        <h3>Daily Meal Program</h3>
+                        <p>We provide nutritious meals to over 5,000 individuals daily through our community kitchens and food distribution centers.</p>
+                        <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://savioursfoundation.org/wp-content/uploads/2020/03/Health.jpg" alt="Medical Assistance">
+                    </div>
+                    <div class="service-content">
+                        <h3>Medical Assistance</h3>
+                        <p>Our mobile clinics and health camps provide free medical check-ups, medicines, and health education to remote communities.</p>
+                        <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="https://mangalman.in/wp-content/uploads/2020/05/education-children.jpg" alt="Education Support">
+                    </div>
+                    <div class="service-content">
+                        <h3>Education Support</h3>
+                        <p>We run after-school programs, provide scholarships, and establish learning centers to ensure children receive quality education.</p>
+                        <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <div class="impact-stats">
+                <div class="stat">
+                    <i class="fas fa-utensils"></i>
+                    <span class="stat-number">2.5M+</span>
+                    <span class="stat-label">Meals Served</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-user-graduate"></i>
+                    <span class="stat-number">15,000+</span>
+                    <span class="stat-label">Children Educated</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-stethoscope"></i>
+                    <span class="stat-number">50,000+</span>
+                    <span class="stat-label">Medical Check-ups</span>
+                </div>
+                <div class="stat">
+                    <i class="fas fa-hands-helping"></i>
+                    <span class="stat-number">2,500+</span>
+                    <span class="stat-label">Volunteers</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="section team">
+        <div class="container">
+            <h2 class="section-title">Our Leadership Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="" alt="Dr. Shiny Reddy">
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Shiny Reddy</h3>
+                        <p class="member-role">Co-Founder & Executive Director</p>
+                        <p>With over 20 years of experience in social work, Dr. Shiny Reddy leads our strategic initiatives and community partnerships.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="" alt="Dr. Ravali">
+                    </div>
+                    <div class="member-info">
+                        <h3>Dr. Ravali</h3>
+                        <p class="member-role">Co-Founder & Operations Director</p>
+                        <p>Dr. Ravali oversees our daily operations and ensures the efficient delivery of all our programs and services.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="member-img">
+                        <img src="" alt="Priya Sharma">
+                    </div>
+                    <div class="member-info">
+                        <h3>Priya Sharma</h3>
+                        <p class="member-role">Program Director</p>
+                        <p>Priya manages our education and healthcare initiatives, bringing innovative approaches to community development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved Section -->
+    <section id="involve" class="section">
+        <div class="container">
+            <h2 class="section-title">Get Involved</h2>
+            <div class="involvement-options">
+                <div class="involvement-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Volunteer</h3>
+                    <p>Join our team of dedicated volunteers and make a direct impact in your community. We have opportunities for all skill sets and availability.</p>
+                    <a href="#" class="btn mt-30">Become a Volunteer</a>
+                </div>
+                <div class="involvement-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Partner With Us</h3>
+                    <p>Businesses and organizations can partner with us to amplify our impact through corporate social responsibility initiatives.</p>
+                    <a href="#" class="btn mt-30">Explore Partnerships</a>
+                </div>
+                <div class="involvement-card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Spread the Word</h3>
+                    <p>Help us raise awareness by sharing our mission with your network. Follow us on social media and become an ambassador for change.</p>
+                    <a href="#" class="btn mt-30">Share Our Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="donate" class="section services">
+        <div class="container">
+            <h2 class="section-title">Support Our Mission</h2>
+            <div class="donation-options">
+                <div class="donation-option">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Online Donation</h3>
+                    <p>Make a secure online donation using your credit card, debit card, or digital wallet.</p>
+                    <a href="#" class="btn mt-30">Donate Now</a>
+                </div>
+                <div class="donation-option">
+                    <i class="fas fa-university"></i>
+                    <h3>Bank Transfer</h3>
+                    <p>Transfer funds directly to our bank account. Contact us for banking details.</p>
+                    <a href="#" class="btn mt-30">Get Bank Details</a>
+                </div>
+                <div class="donation-option">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Check Donation</h3>
+                    <p>Mail a check payable to "Joseph Charitable Trust" to our office address.</p>
+                    <a href="#contact" class="btn mt-30">Get Address</a>
+                </div>
+            </div>
+            <div class="text-center">
+                <h3>Quick Donate</h3>
+                <div class="donation-amounts">
+                    <div class="amount-option">$25</div>
+                    <div class="amount-option">$50</div>
+                    <div class="amount-option active">$100</div>
+                    <div class="amount-option">$250</div>
+                    <div class="amount-option">Other</div>
+                </div>
+                <a href="#" class="btn">Donate $100 Now</a>
+            </div>
+            <div class="transparency-section">
+                <h3 class="text-center">Transparency in Fund Utilization</h3>
+                <p class="text-center">We are committed to using your donations effectively and responsibly. Here's how your contribution is utilized:</p>
+                <div class="transparency-chart">
+                    <div class="chart-item" style="background-color: #8B4513; width: 70%">70% Program Services</div>
+                    <div class="chart-item" style="background-color: #D2691E; width: 20%">20% Administrative</div>
+                    <div class="chart-item" style="background-color: #CD853F; width: 10%">10% Fundraising</div>
+                </div>
+                <p>We undergo annual independent audits and make our financial reports publicly available to ensure complete transparency.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Food Distribution">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Medical Camp">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80" alt="Education Program">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1559027615-cfa462850979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Community Event">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Volunteers">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Children Learning">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>We'd love to hear from you. Whether you have questions about our programs, want to volunteer, or need assistance, please reach out to us.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Office</h4>
+                                <p>123 Charity Avenue, Hope City, HC 12345</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@josephtrust.org</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.99834562376315!3d40.719143037521976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27c9fa7c03%3A0x3caf7b7a1873d783!2sCharity%20Ave%2C%20Brooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1690904833997!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjQ0Q4NTNGIiBkPSJNMjU2IDQ4QzE0MS4xIDQ4IDQ4IDE0MS4xIDQ4IDI1NnM5My4xIDIwOCAyMDggMjA4IDIwOC05My4xIDIwOC0yMDhTMzcwLjkgNDggMjU2IDQ4em0tMjQuMiAxODUuNGMtMjEuOCA0My4zLTQzLjMgODYuNi02NS4xIDEyOS45LTMuMyA2LjYgMS42IDE0LjUgOS4xIDE0LjVoMjEuOGM0LjYgMCA4LjktMi41IDExLjItNi42bDUxLjUtMTAyLjkgNTEuNSAxMDIuOWMyLjMgNC4xIDYuNiA2LjYgMTEuMiA2LjZoMjEuOGM3LjUgMCAxMi40LTcuOSA5LjEtMTQuNS0yMS44LTQzLjMtNDMuMy04Ni42LTY1LjEtMTI5LjktMy4zLTYuNi0xMi45LTYuNi0xNi4yIDB6bTI0LjItMTE2Yy0xOS44IDAtMzYgMTYuMi0zNiAzNnMxNi4yIDM2IDM2IDM2IDM2LTE2LjIgMzYtMzYtMTYuMi0zNi0zNi0zNnptMTQ0IDI1NmMtMTkuOCAwLTM2IDE2LjItMzYgMzZzMTYuMiAzNiAzNiAzNiAzNi0xNi4yIDM2LTM2LTE2LjItMzYtMzYtMzZ6Ii8+PC9zdmc+" alt="Joseph Charitable Trust Logo">
+                        <h3>Joseph Charitable Trust</h3>
+                    </div>
+                    <p>Bringing hope and changing lives through essential services, education, and community development programs since 2005.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#work">Our Work</a></li>
+                        <li><a href="#involve">Get Involved</a></li>
+                        <li><a href="#donate">Donate</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Our Programs</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Daily Meal Program</a></li>
+                        <li><a href="#">Medical Assistance</a></li>
+                        <li><a href="#">Education Support</a></li>
+                        <li><a href="#">Community Development</a></li>
+                        <li><a href="#">Emergency Relief</a></li>
+                        <li><a href="#">Women Empowerment</a></li>
+                        <li><a href="#">Child Welfare</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p></p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>info@josephtrust.org</p>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to our newsletter to receive updates on our programs and impact.</p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Your Email Address" required>
+                        </div>
+                        <button type="submit" class="btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        <p>&copy; 2023 Joseph Charitable Trust. All rights reserved. | Registered Charity No: 12345-6789</p>
+                    </div>
+                    <div class="footer-links-bottom">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Financial Reports</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
