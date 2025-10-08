@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Charitable Trust | Charity Foundation</title>
+    <meta name="description" content="Joseph Charitable Trust Foundation is dedicated to providing essential services to underprivileged communities through food distribution, medical assistance, education programs, and social services.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #b85f20; 
-            --secondary: #D2691E; 
-            --accent: #CD853F; 
-            --light: #f4bf89; 
-            --dark: #2F1B0C; 
-            --success: #228B22; 
-            --warning: #FF8C00; 
-            --danger: #B22222; 
-            --gray: #696969;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            --primary: #1e6598;       /* Trustworthy blue */
+            --secondary: #2c8c6b;     /* Compassionate green */
+            --accent: #e67e22;        /* Warm action orange */
+            --light: #f8f9fa;         /* Clean white */
+            --dark: #2c3e50;          /* Professional dark */
+            --text-dark: #2c3e50;     /* Readable dark text */
+            --text-light: #ffffff;    /* White text */
+            --success: #27ae60;       /* Positive green */
+            --warning: #f39c12;       /* Attention orange */
+            --danger: #e74c3c;        /* Urgent red */
+            --gray: #95a5a6;          /* Neutral gray */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
 
@@ -33,16 +36,14 @@
 
         body {
             background-color: var(--light);
-            color: var(--dark);
+            color: var(--text-dark);
             line-height: 1.6;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(205, 133, 63, 0.1) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(139, 69, 19, 0.1) 0%, transparent 20%);
+            overflow-x: hidden;
         }
 
         a {
             text-decoration: none;
-            color: var(--secondary);
+            color: var(--primary);
             transition: var(--transition);
         }
 
@@ -52,10 +53,14 @@
 
         img {
             max-width: 100%;
+            height: auto;
+            display: block;
         }
 
-        h1 {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
         }
 
         .container {
@@ -77,22 +82,23 @@
             transition: var(--transition);
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
         }
 
-        .btn:hover {
+        .btn:hover, .btn:focus {
             background: var(--secondary);
             transform: translateY(-3px);
             box-shadow: var(--shadow);
+            outline: none;
         }
 
         .btn-secondary {
             background: var(--accent);
-            color: var(--dark);
+            color: white;
         }
 
-        .btn-secondary:hover {
-            background: #e6b17e;
-            color: var(--dark);
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: #d35400;
         }
 
         .section {
@@ -123,14 +129,15 @@
             text-align: center;
         }
 
-       
+        /* Header */
         header {
-            background-color: var(--light);
+            background-color: white;
             box-shadow: var(--shadow);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            transition: var(--transition);
         }
 
         .header-container {
@@ -166,13 +173,13 @@
 
         .nav-menu a {
             font-weight: 600;
-            color: var(--dark);
+            color: var(--text-dark);
             transition: var(--transition);
             position: relative;
             padding: 5px 0;
         }
 
-        .nav-menu a:hover {
+        .nav-menu a:hover, .nav-menu a:focus {
             color: var(--primary);
         }
 
@@ -187,7 +194,7 @@
             transition: var(--transition);
         }
 
-        .nav-menu a:hover::after {
+        .nav-menu a:hover::after, .nav-menu a:focus::after {
             width: 100%;
         }
 
@@ -196,16 +203,20 @@
             cursor: pointer;
             font-size: 1.5rem;
             color: var(--primary);
+            z-index: 1001;
+            background: none;
+            border: none;
         }
 
-       
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(47, 27, 12, 0.7), rgba(47, 27, 12, 0.7)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 180px 0 100px;
             text-align: center;
+            margin-top: 80px;
         }
 
         .hero h2 {
@@ -250,7 +261,7 @@
         }
 
         .about-text p {
-            color: var(--dark);
+            color: var(--text-dark);
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
@@ -258,7 +269,6 @@
         .about-image {
             flex: 1;
             min-width: 300px;
-            padding: 50px;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -293,7 +303,7 @@
         }
 
         .mission p, .vision p {
-            color: var(--dark);
+            color: var(--text-dark);
             font-size: 1.05rem;
         }
 
@@ -303,8 +313,9 @@
             margin-bottom: 20px;
         }
 
+        /* Services Section */
         .services {
-            background-color: white;
+            background-color: #f1f8ff;
         }
 
         .services-grid {
@@ -354,12 +365,12 @@
         }
 
         .service-content p {
-            color: var(--dark);
+            color: var(--text-dark);
             margin-bottom: 20px;
             font-size: 1.05rem;
         }
 
-      
+        /* Impact Section */
         .impact-stats {
             display: flex;
             justify-content: space-around;
@@ -393,12 +404,13 @@
 
         .stat-label {
             font-size: 1.2rem;
-            color: var(--dark);
+            color: var(--text-dark);
             font-weight: 600;
         }
 
+        /* Team Section */
         .team {
-            background-color: var(--light);
+            background-color: white;
         }
 
         .team-grid {
@@ -455,7 +467,7 @@
         }
 
         .member-info p {
-            color: var(--dark);
+            color: var(--text-dark);
             font-size: 1.05rem;
         }
 
@@ -488,7 +500,7 @@
         }
 
         .involvement-card p {
-            color: var(--dark);
+            color: var(--text-dark);
             margin-bottom: 25px;
             font-size: 1.1rem;
         }
@@ -529,7 +541,7 @@
         }
 
         .donation-option p {
-            color: var(--dark);
+            color: var(--text-dark);
             margin-bottom: 25px;
             font-size: 1.05rem;
         }
@@ -559,9 +571,10 @@
             color: var(--primary);
         }
 
-        .amount-option.active, .amount-option:hover {
+        .amount-option.active, .amount-option:hover, .amount-option:focus {
             background: var(--primary);
             color: white;
+            outline: none;
         }
 
         .transparency-section {
@@ -580,7 +593,7 @@
         }
 
         .transparency-section p {
-            color: var(--dark);
+            color: var(--text-dark);
             text-align: center;
             max-width: 800px;
             margin: 0 auto 30px;
@@ -602,7 +615,7 @@
             justify-content: center;
             color: white;
             font-weight: 600;
-            font-size: 0.7rem;
+            font-size: 0.9rem;
         }
 
         /* Gallery Section */
@@ -637,7 +650,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(139, 69, 19, 0.7);
+            background: rgba(30, 101, 152, 0.7);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -673,7 +686,7 @@
         }
 
         .contact-info p {
-            color: var(--dark);
+            color: var(--text-dark);
             margin-bottom: 30px;
             font-size: 1.1rem;
         }
@@ -690,19 +703,19 @@
 
         .contact-item i {
             font-size: 1.5rem;
-            color: rgb(80, 64, 64);
+            color: var(--primary);
             margin-right: 15px;
             margin-top: 5px;
         }
 
         .contact-item h4 {
-            color: rgb(48, 40, 40);
+            color: var(--primary);
             margin-bottom: 5px;
             font-size: 1.2rem;
         }
 
         .contact-item p {
-            color: rgb(55, 46, 46);
+            color: var(--text-dark);
             margin-bottom: 0;
             font-size: 1.05rem;
         }
@@ -710,14 +723,14 @@
         .contact-form {
             flex: 1;
             min-width: 300px;
-            background: rgb(78, 63, 63);
+            background: white;
             padding: 35px;
             border-radius: 10px;
             box-shadow: var(--shadow);
         }
 
         .contact-form h3 {
-            color: rgb(155, 127, 127);
+            color: var(--primary);
             margin-bottom: 25px;
             font-size: 1.8rem;
         }
@@ -741,13 +754,13 @@
             border-radius: 5px;
             font-size: 1rem;
             transition: var(--transition);
-            color: var(--dark);
+            color: var(--text-dark);
         }
 
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
-            box-shadow: 0 0 0 3px rgba(139, 69, 19, 0.2);
+            box-shadow: 0 0 0 3px rgba(30, 101, 152, 0.2);
         }
 
         textarea.form-control {
@@ -772,7 +785,7 @@
         /* Footer Styles */
         footer {
             background: var(--dark);
-            color: white;
+            color: var(--text-light);
             padding: 70px 0 0;
         }
 
@@ -787,6 +800,9 @@
             display: flex;
             flex-direction: column;
         }
+        .menu-close {
+        display: none !important;
+    }
 
         .footer-logo {
             display: flex;
@@ -842,22 +858,22 @@
             display: inline-block;
         }
 
-        .footer-links a:hover {
+        .footer-links a:hover, .footer-links a:focus {
             color: var(--accent);
             transform: translateX(5px);
         }
 
-        .contact-info {
+        .footer-contact-info {
             margin-top: 10px;
         }
 
-        .contact-item {
+        .footer-contact-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 18px;
         }
 
-        .contact-item i {
+        .footer-contact-item i {
             font-size: 1.1rem;
             color: var(--accent);
             margin-right: 12px;
@@ -865,8 +881,8 @@
             width: 20px;
         }
 
-        .contact-item p {
-            color: rgba(141, 102, 102, 0.8);
+        .footer-contact-item p {
+            color: rgba(255, 255, 255, 0.8);
             margin: 0;
             font-size: 1rem;
             line-height: 1.5;
@@ -891,39 +907,14 @@
             font-size: 1.1rem;
         }
 
-        .social-links a:hover {
+        .social-links a:hover, .social-links a:focus {
             background: var(--accent);
             transform: translateY(-5px);
+            outline: none;
         }
 
         .newsletter-form {
             margin-top: 15px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: var(--transition);
-            color: var(--dark);
-            background: rgba(255, 255, 255, 0.9);
-        }
-
-        .form-control:focus {
-            border-color: var(--accent);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(205, 133, 63, 0.3);
-            background: white;
-        }
-
-        .form-control::placeholder {
-            color: #888;
         }
 
         .footer-bottom {
@@ -955,58 +946,463 @@
             transition: var(--transition);
         }
 
-        .footer-links-bottom a:hover {
+        .footer-links-bottom a:hover, .footer-links-bottom a:focus {
             color: var(--accent);
         }
 
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h2 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
         }
 
-        @media (max-width: 768px) {
+        /* Focus styles for better accessibility */
+        a:focus, button:focus, .amount-option:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Skip to main content link */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--primary);
+            color: white;
+            padding: 8px;
+            z-index: 10000;
+            text-decoration: none;
+            border-radius: 0 0 4px 4px;
+            transition: top 0.3s;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 991px) {
             .hamburger {
-                display: block;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                background: var(--primary);
+                color: white;
+                border-radius: 5px;
+                z-index: 1001;
+                transition: var(--transition);
+            }
+
+            .hamburger:hover, .hamburger:focus {
+                background: var(--secondary);
+                transform: scale(1.05);
             }
 
             .nav-menu {
                 position: fixed;
-                top: 80px;
+                top: 0;
                 right: -100%;
-                background: white;
-                width: 80%;
-                height: calc(100vh - 80px);
+                background: linear-gradient(135deg, var(--dark) 0%, #1a2a3a 100%);
+                width: 320px;
+                height: 100vh;
                 flex-direction: column;
-                align-items: center;
-                padding-top: 50px;
-                transition: var(--transition);
-                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 30px 40px;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+                z-index: 999;
+                overflow-y: auto;
+                backdrop-filter: blur(10px);
             }
 
             .nav-menu.active {
                 right: 0;
             }
 
+            .nav-menu::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%231e6598' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+                opacity: 0.3;
+            }
+
             .nav-menu li {
-                margin: 20px 0;
+                margin: 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                transform: translateX(20px);
+                opacity: 0;
+                transition: all 0.4s ease;
             }
 
+            .nav-menu.active li {
+                transform: translateX(0);
+                opacity: 1;
+            }
+
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+            .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+
+            .nav-menu a {
+                display: flex;
+                align-items: center;
+                padding: 18px 0;
+                font-size: 1.2rem;
+                font-weight: 600;
+                width: 100%;
+                color: white;
+                transition: var(--transition);
+                position: relative;
+            }
+
+            .nav-menu a::before {
+                content: '';
+                position: absolute;
+                left: -10px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 0;
+                background: var(--accent);
+                border-radius: 2px;
+                transition: var(--transition);
+            }
+
+            .nav-menu a:hover, .nav-menu a:focus {
+                color: var(--accent);
+                padding-left: 15px;
+            }
+
+            .nav-menu a:hover::before, .nav-menu a:focus::before {
+                height: 20px;
+            }
+
+            /* Overlay */
+            .menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7);
+                backdrop-filter: blur(5px);
+                z-index: 998;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .menu-overlay.active {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .menu-close {
+                position: absolute;
+                top: 25px;
+                right: 25px;
+                background: rgba(255, 255, 255, 0.1);
+                border: none;
+                color: white;
+                width: 44px;
+                height: 44px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.3rem;
+                cursor: pointer;
+                transition: var(--transition);
+                z-index: 1002;
+            }
+
+            .menu-close:hover, .menu-close:focus {
+                background: var(--accent);
+                transform: rotate(90deg);
+                outline: none;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+        }
+
+        /* Responsive Design */
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+            
             .hero h2 {
-                font-size: 2.4rem;
+                font-size: 3.5rem;
             }
+            
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
+        /* Medium devices (laptops, 992px to 1199px) */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .container {
+                max-width: 960px;
+            }
+            
+            .hero h2 {
+                font-size: 3rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .nav-menu li {
+                margin-left: 20px;
+            }
+            
+            .stat {
+                min-width: 180px;
+            }
+        }
+
+        /* Small devices (tablets, 768px to 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .container {
+                max-width: 720px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
             .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            /* Navigation for tablets */
+            .nav-menu {
+                display: none;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                background: white;
+                width: 300px;
+                height: 100vh;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 100px 30px 30px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 15px 0;
                 font-size: 1.1rem;
+                width: 100%;
+            }
+            
+            /* Layout adjustments for tablets */
+            .about-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .involvement-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .donation-options {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .impact-stats {
+                gap: 20px;
+            }
+            
+            .stat {
+                min-width: 160px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile devices (767px and down) */
+        @media (max-width: 767px) {
+            .container {
+                width: 92%;
+                padding: 0 15px;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                background: white;
+                width: 280px;
+                height: 100vh;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding: 100px 25px 30px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-menu li:last-child {
+                border-bottom: none;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 15px 0;
+                font-size: 1.1rem;
+                width: 100%;
+                color: var(--text-dark);
+            }
+            
+            .nav-menu a:hover, .nav-menu a:focus {
+                color: var(--primary);
+                background: rgba(30, 101, 152, 0.05);
+            }
+            
+            .nav-menu a::after {
+                display: none;
+            }
+            
+            .hero {
+                padding: 130px 0 50px;
+                margin-top: 70px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+                line-height: 1.3;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 280px;
+                padding: 14px 25px;
+                min-height: 48px;
             }
             
             .section {
-                padding: 70px 0;
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+                margin-bottom: 40px;
+            }
+            
+            /* Single column layouts for mobile */
+            .about-content, .mission-vision, .contact-container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .about-text, .about-image {
+                flex: none;
+                width: 100%;
+            }
+            
+            .mission, .vision {
+                flex: none;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .services-grid, .team-grid, .involvement-options, .donation-options {
+                grid-template-columns: 1fr;
+                gap: 25px;
             }
             
             .footer-content {
@@ -1017,43 +1413,206 @@
             .footer-bottom-content {
                 flex-direction: column;
                 text-align: center;
+                gap: 15px;
             }
             
             .footer-links-bottom {
                 justify-content: center;
+                margin-top: 15px;
+                flex-wrap: wrap;
+            }
+            
+            /* Impact stats adjustments */
+            .impact-stats {
+                gap: 15px;
+                justify-content: center;
+            }
+            
+            .stat {
+                min-width: 140px;
+                padding: 20px 15px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            /* Gallery adjustments */
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+            
+            /* Donation amounts */
+            .donation-amounts {
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+            
+            .amount-option {
+                padding: 12px 15px;
+                font-size: 0.9rem;
+                flex: 1;
+                min-width: 70px;
+                text-align: center;
+            }
+            
+            /* Transparency chart */
+            .transparency-chart .chart-item {
+                font-size: 0.7rem;
+                padding: 0 5px;
+            }
+            
+            /* Contact form */
+            .contact-form, .contact-info {
+                flex: none;
+                width: 100%;
+            }
+            
+            .map-container {
+                height: 300px;
+                margin-top: 30px;
+            }
+            
+            /* Form improvements for mobile */
+            .form-control {
+                padding: 16px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            /* Prevent horizontal scrolling */
+            body {
+                overflow-x: hidden;
             }
         }
 
-        @media (max-width: 576px) {
+        /* Extra small devices (phones, 480px and down) */
+        @media (max-width: 480px) {
             .hero {
-                padding: 160px 0 80px;
-            }
-
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 280px;
+                padding: 120px 0 40px;
             }
             
-            .section-title {
+            .hero h2 {
                 font-size: 1.8rem;
             }
             
-            footer {
-                padding: 50px 0 0;
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .stat {
+                min-width: 120px;
+                padding: 15px 10px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .stat-label {
+                font-size: 0.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mission, .vision {
+                padding: 25px 20px;
+            }
+            
+            .service-card, .involvement-card, .donation-option {
+                padding: 25px 20px;
             }
             
             .footer-links-bottom {
                 flex-direction: column;
                 gap: 10px;
+            }
+            
+            .transparency-section {
+                padding: 30px 20px;
+            }
+            
+            .contact-form {
+                padding: 25px 20px;
+            }
+        }
+
+        /* Very small devices (phones, 360px and down) */
+        @media (max-width: 360px) {
+            .container {
+                width: 95%;
+                padding: 0 10px;
+            }
+            
+            .hero h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero p {
+                font-size: 0.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .stat {
+                min-width: 100px;
+                padding: 15px 8px;
+            }
+            
+            .stat-number {
+                font-size: 1.6rem;
+            }
+            
+            .gallery-item {
+                height: 180px;
+            }
+            
+            .amount-option {
+                padding: 10px 12px;
+                font-size: 0.8rem;
+            }
+
+            .transparency-chart .chart-item {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .logo h1 {
+                font-size: 1.2rem;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .stat {
+                min-width: 120px;
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
             }
         }
 
@@ -1068,11 +1627,14 @@
     </style>
 </head>
 <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <!-- Header -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjOEI0NTEzIiBkPSJNMjU2IDQ4QzE0MS4xIDQ4IDQ4IDE0MS4xIDQ4IDI1NnM5My4xIDIwOCAyMDggMjA4IDIwOC05My4xIDIwOC0yMDhTMzcwLjkgNDggMjU2IDQ4em0tMjQuMiAxODUuNGMtMjEuOCA0My4zLTQzLjMgODYuNi02NS4xIDEyOS45LTMuMyA2LjYgMS42IDE0LjUgOS4xIDE0LjVoMjEuOGM0LjYgMCA4LjktMi41IDExLjItNi42bDUxLjUtMTAyLjkgNTEuNSAxMDIuOWMyLjMgNC4xIDYuNiA2LjYgMTEuMiA2LjZoMjEuOGM3LjUgMCAxMi40LTcuOSA5LjEtMTQuNS0yMS44LTQzLjMtNDMuMy04Ni42LTY1LjEtMTI5LjktMy4zLTYuNi0xMi45LTYuNi0xNi4yIDB6bTI0LjItMTE2Yy0xOS44IDAtMzYgMTYuMi0zNiAzNnMxNi4yIDM2IDM2IDM2IDM2LTE2LjIgMzYtMzYtMTYuMi0zNi0zNi0zNnptMTQ0IDI1NmMtMTkuOCAwLTM2IDE2LjItMzYgMzZzMTYuMiAzNiAzNiAzNiAzNi0xNi4yIDM2LTM2LTE2LjItMzYtMzYtMzZ6Ii8+PC9zdmc+" alt="Joseph Charitable Trust Logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMWU2NTk4IiBkPSJNMjU2IDQ4QzE0MS4xIDQ4IDQ4IDE0MS4xIDQ4IDI1NnM5My4xIDIwOCAyMDggMjA4IDIwOC05My4xIDIwOC0yMDhTMzcwLjkgNDggMjU2IDQ4em0tMjQuMiAxODUuNGMtMjEuOCA0My4zLTQzLjMgODYuNi02NS4xIDEyOS45LTMuMyA2LjYgMS42IDE0LjUgOS4xIDE0LjVoMjEuOGM0LjYgMCA4LjktMi41IDExLjItNi42bDUxLjUtMTAyLjkgNTEuNSAxMDIuOWMyLjMgNC4xIDYuNiA2LjYgMTEuMiA2LjZoMjEuOGM3LjUgMCAxMi40LTcuOSA5LjEtMTQuNS0yMS44LTQzLjMtNDMuMy04Ni42LTY1LjEtMTI5LjktMy4zLTYuNi0xMi45LTYuNi0xNi4yIDB6bTI0LjItMTE2Yy0xOS44IDAtMzYgMTYuMi0zNiAzNnMxNi4yIDM2IDM2IDM2IDM2LTE2LjIgMzYtMzYtMTYuMi0zNi0zNi0zNnptMTQ0IDI1NmMtMTkuOCAwLTM2IDE2LjItMzYgMzZzMTYuMiAzNiAzNiAzNiAzNi0xNi4yIDM2LTM2LTE2LjItMzYtMzYtMzZ6Ii8+PC9zdmc+" alt="Joseph Charitable Trust Logo">
                 <h1>Joseph Charitable Trust</h1>
             </div>
             <nav>
@@ -1085,9 +1647,9 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
-                <div class="hamburger">
+                <button class="hamburger" aria-label="Toggle navigation menu">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
             </nav>
         </div>
     </header>
@@ -1105,329 +1667,333 @@
         </div>
     </section>
 
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Joseph Charitable Trust</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Our Story</h3>
-                    <p>Founded in 2005, Joseph Charitable Trust began as a small community initiative in response to the devastating effects of natural disasters in our region. What started as a temporary relief effort has grown into a comprehensive charity organization serving thousands of people annually.</p>
-                    <p>Our journey began when our founders, Dr. Shiny Reddy and Dr. Ravali, witnessed the plight of families affected by floods and decided to take action. They mobilized local resources and volunteers to provide immediate assistance, and soon realized the need for sustained support in these communities.</p>
-                    <p>Today, we operate in over 50 communities across three states, with a dedicated team of staff and volunteers working tirelessly to bring positive change to those who need it most.</p>
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">About Joseph Charitable Trust</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Our Story</h3>
+                        <p>Founded in 2005, Joseph Charitable Trust began as a small community initiative in response to the devastating effects of natural disasters in our region. What started as a temporary relief effort has grown into a comprehensive charity organization serving thousands of people annually.</p>
+                        <p>Our journey began when our founders, Dr. Shiny Reddy and Dr. Ravali, witnessed the plight of families affected by floods and decided to take action. They mobilized local resources and volunteers to provide immediate assistance, and soon realized the need for sustained support in these communities.</p>
+                        <p>Today, we operate in over 50 communities across three states, with a dedicated team of staff and volunteers working tirelessly to bring positive change to those who need it most.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://media.istockphoto.com/id/1472567934/photo/god-helping-hand-concept-and-international-day-of-peace.jpg?s=612x612&w=0&k=20&c=1vqP1lkwFHQMTdaYaBXbjBIsyhWXToXEFxI4W1Zb3ps=" alt="Joseph Charitable Trust Team">
+                    </div>
                 </div>
-                <div class="about-image">
-                    <img src="https://media.istockphoto.com/id/1472567934/photo/god-helping-hand-concept-and-international-day-of-peace.jpg?s=612x612&w=0&k=20&c=1vqP1lkwFHQMTdaYaBXbjBIsyhWXToXEFxI4W1Zb3ps=" alt="Joseph Charitable Trust Team">
+                <div class="mission-vision">
+                    <div class="mission">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>To alleviate suffering and empower underprivileged communities by providing essential services, education, and opportunities for sustainable development.</p>
+                    </div>
+                    <div class="vision">
+                        <i class="fas fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>A world where every individual has access to basic necessities, quality education, healthcare, and the opportunity to reach their full potential.</p>
+                    </div>
                 </div>
             </div>
-            <div class="mission-vision">
-                <div class="mission">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Our Mission</h3>
-                    <p>To alleviate suffering and empower underprivileged communities by providing essential services, education, and opportunities for sustainable development.</p>
-                </div>
-                <div class="vision">
-                    <i class="fas fa-eye"></i>
-                    <h3>Our Vision</h3>
-                    <p>A world where every individual has access to basic necessities, quality education, healthcare, and the opportunity to reach their full potential.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section id="work" class="section services">
-        <div class="container">
-            <h2 class="section-title">Our Programs & Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Food Distribution">
+        <!-- Services Section -->
+        <section id="work" class="section services">
+            <div class="container">
+                <h2 class="section-title">Our Programs & Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Food Distribution">
+                        </div>
+                        <div class="service-content">
+                            <h3>Daily Meal Program</h3>
+                            <p>We provide nutritious meals to over 5,000 individuals daily through our community kitchens and food distribution centers.</p>
+                            <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                        </div>
                     </div>
-                    <div class="service-content">
-                        <h3>Daily Meal Program</h3>
-                        <p>We provide nutritious meals to over 5,000 individuals daily through our community kitchens and food distribution centers.</p>
-                        <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://savioursfoundation.org/wp-content/uploads/2020/03/Health.jpg" alt="Medical Assistance">
+                        </div>
+                        <div class="service-content">
+                            <h3>Medical Assistance</h3>
+                            <p>Our mobile clinics and health camps provide free medical check-ups, medicines, and health education to remote communities.</p>
+                            <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                        </div>
                     </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://savioursfoundation.org/wp-content/uploads/2020/03/Health.jpg" alt="Medical Assistance">
-                    </div>
-                    <div class="service-content">
-                        <h3>Medical Assistance</h3>
-                        <p>Our mobile clinics and health camps provide free medical check-ups, medicines, and health education to remote communities.</p>
-                        <a href="#" class="btn btn-secondary mt-30">Learn More</a>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-img">
-                        <img src="https://mangalman.in/wp-content/uploads/2020/05/education-children.jpg" alt="Education Support">
-                    </div>
-                    <div class="service-content">
-                        <h3>Education Support</h3>
-                        <p>We run after-school programs, provide scholarships, and establish learning centers to ensure children receive quality education.</p>
-                        <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://mangalman.in/wp-content/uploads/2020/05/education-children.jpg" alt="Education Support">
+                        </div>
+                        <div class="service-content">
+                            <h3>Education Support</h3>
+                            <p>We run after-school programs, provide scholarships, and establish learning centers to ensure children receive quality education.</p>
+                            <a href="#" class="btn btn-secondary mt-30">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Impact Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">Our Impact</h2>
-            <div class="impact-stats">
-                <div class="stat">
-                    <i class="fas fa-utensils"></i>
-                    <span class="stat-number">2.5M+</span>
-                    <span class="stat-label">Meals Served</span>
-                </div>
-                <div class="stat">
-                    <i class="fas fa-user-graduate"></i>
-                    <span class="stat-number">15,000+</span>
-                    <span class="stat-label">Children Educated</span>
-                </div>
-                <div class="stat">
-                    <i class="fas fa-stethoscope"></i>
-                    <span class="stat-number">50,000+</span>
-                    <span class="stat-label">Medical Check-ups</span>
-                </div>
-                <div class="stat">
-                    <i class="fas fa-hands-helping"></i>
-                    <span class="stat-number">2,500+</span>
-                    <span class="stat-label">Volunteers</span>
+        <!-- Impact Section -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title">Our Impact</h2>
+                <div class="impact-stats">
+                    <div class="stat">
+                        <i class="fas fa-utensils"></i>
+                        <span class="stat-number">2.5M+</span>
+                        <span class="stat-label">Meals Served</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-user-graduate"></i>
+                        <span class="stat-number">15,000+</span>
+                        <span class="stat-label">Children Educated</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-stethoscope"></i>
+                        <span class="stat-number">50,000+</span>
+                        <span class="stat-label">Medical Check-ups</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-hands-helping"></i>
+                        <span class="stat-number">2,500+</span>
+                        <span class="stat-label">Volunteers</span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-   
-    <section class="section team">
-        <div class="container">
-            <h2 class="section-title">Our Leadership Team</h2>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="" alt="Dr. Shiny Reddy">
+        <!-- Team Section -->
+        <section class="section team">
+            <div class="container">
+                <h2 class="section-title">Our Leadership Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" alt="Dr. Shiny Reddy">
+                        </div>
+                        <div class="member-info">
+                            <h3>Dr. Shiny Reddy</h3>
+                            <p class="member-role">Co-Founder & Executive Director</p>
+                            <p>With over 20 years of experience in social work, Dr. Shiny Reddy leads our strategic initiatives and community partnerships.</p>
+                        </div>
                     </div>
-                    <div class="member-info">
-                        <h3>Dr. Shiny Reddy</h3>
-                        <p class="member-role">Co-Founder & Executive Director</p>
-                        <p>With over 20 years of experience in social work, Dr. Shiny Reddy leads our strategic initiatives and community partnerships.</p>
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dr. Ravali">
+                        </div>
+                        <div class="member-info">
+                            <h3>Dr. Ravali</h3>
+                            <p class="member-role">Co-Founder & Operations Director</p>
+                            <p>Dr. Ravali oversees our daily operations and ensures the efficient delivery of all our programs and services.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="" alt="Dr. Ravali">
-                    </div>
-                    <div class="member-info">
-                        <h3>Dr. Ravali</h3>
-                        <p class="member-role">Co-Founder & Operations Director</p>
-                        <p>Dr. Ravali oversees our daily operations and ensures the efficient delivery of all our programs and services.</p>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-img">
-                        <img src="" alt="Priya Sharma">
-                    </div>
-                    <div class="member-info">
-                        <h3>Priya Sharma</h3>
-                        <p class="member-role">Program Director</p>
-                        <p>Priya manages our education and healthcare initiatives, bringing innovative approaches to community development.</p>
+                    <div class="team-member">
+                        <div class="member-img">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Priya Sharma">
+                        </div>
+                        <div class="member-info">
+                            <h3>Priya Sharma</h3>
+                            <p class="member-role">Program Director</p>
+                            <p>Priya manages our education and healthcare initiatives, bringing innovative approaches to community development.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Get Involved Section -->
-    <section id="involve" class="section">
-        <div class="container">
-            <h2 class="section-title">Get Involved</h2>
-            <div class="involvement-options">
-                <div class="involvement-card">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>Volunteer</h3>
-                    <p>Join our team of dedicated volunteers and make a direct impact in your community. We have opportunities for all skill sets and availability.</p>
-                    <a href="#" class="btn mt-30">Become a Volunteer</a>
-                </div>
-                <div class="involvement-card">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Partner With Us</h3>
-                    <p>Businesses and organizations can partner with us to amplify our impact through corporate social responsibility initiatives.</p>
-                    <a href="#" class="btn mt-30">Explore Partnerships</a>
-                </div>
-                <div class="involvement-card">
-                    <i class="fas fa-bullhorn"></i>
-                    <h3>Spread the Word</h3>
-                    <p>Help us raise awareness by sharing our mission with your network. Follow us on social media and become an ambassador for change.</p>
-                    <a href="#" class="btn mt-30">Share Our Story</a>
+        <!-- Get Involved Section -->
+        <section id="involve" class="section">
+            <div class="container">
+                <h2 class="section-title">Get Involved</h2>
+                <div class="involvement-options">
+                    <div class="involvement-card">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Volunteer</h3>
+                        <p>Join our team of dedicated volunteers and make a direct impact in your community. We have opportunities for all skill sets and availability.</p>
+                        <a href="#" class="btn mt-30">Become a Volunteer</a>
+                    </div>
+                    <div class="involvement-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Partner With Us</h3>
+                        <p>Businesses and organizations can partner with us to amplify our impact through corporate social responsibility initiatives.</p>
+                        <a href="#" class="btn mt-30">Explore Partnerships</a>
+                    </div>
+                    <div class="involvement-card">
+                        <i class="fas fa-bullhorn"></i>
+                        <h3>Spread the Word</h3>
+                        <p>Help us raise awareness by sharing our mission with your network. Follow us on social media and become an ambassador for change.</p>
+                        <a href="#" class="btn mt-30">Share Our Story</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- Donate Section -->
+        <section id="donate" class="section services">
+            <div class="container">
+                <h2 class="section-title">Support Our Mission</h2>
+                <div class="donation-options">
+                    <div class="donation-option">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Online Donation</h3>
+                        <p>Make a secure online donation using your credit card, debit card, or digital wallet.</p>
+                        <a href="#" class="btn mt-30">Donate Now</a>
+                    </div>
+                    <div class="donation-option">
+                        <i class="fas fa-university"></i>
+                        <h3>Bank Transfer</h3>
+                        <p>Transfer funds directly to our bank account. Contact us for banking details.</p>
+                        <a href="#" class="btn mt-30">Get Bank Details</a>
+                    </div>
+                    <div class="donation-option">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Check Donation</h3>
+                        <p>Mail a check payable to "Joseph Charitable Trust" to our office address.</p>
+                        <a href="#contact" class="btn mt-30">Get Address</a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h3>Quick Donate</h3>
+                    <div class="donation-amounts">
+                        <button class="amount-option">$25</button>
+                        <button class="amount-option">$50</button>
+                        <button class="amount-option active">$100</button>
+                        <button class="amount-option">$250</button>
+                        <button class="amount-option">Other</button>
+                    </div>
+                    <a href="#" class="btn">Donate $100 Now</a>
+                </div>
+                <div class="transparency-section">
+                    <h3 class="text-center">Transparency in Fund Utilization</h3>
+                    <p class="text-center">We are committed to using your donations effectively and responsibly. Here's how your contribution is utilized:</p>
+                    <div class="transparency-chart">
+                        <div class="chart-item" style="background-color: #1e6598; width: 70%">70% Program Services</div>
+                        <div class="chart-item" style="background-color: #2c8c6b; width: 20%">20% Administrative</div>
+                        <div class="chart-item" style="background-color: #e67e22; width: 10%">10% Fundraising</div>
+                    </div>
+                    <p>We undergo annual independent audits and make our financial reports publicly available to ensure complete transparency.</p>
+                </div>
+            </div>
+        </section>
 
-    <section id="donate" class="section services">
-        <div class="container">
-            <h2 class="section-title">Support Our Mission</h2>
-            <div class="donation-options">
-                <div class="donation-option">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Online Donation</h3>
-                    <p>Make a secure online donation using your credit card, debit card, or digital wallet.</p>
-                    <a href="#" class="btn mt-30">Donate Now</a>
-                </div>
-                <div class="donation-option">
-                    <i class="fas fa-university"></i>
-                    <h3>Bank Transfer</h3>
-                    <p>Transfer funds directly to our bank account. Contact us for banking details.</p>
-                    <a href="#" class="btn mt-30">Get Bank Details</a>
-                </div>
-                <div class="donation-option">
-                    <i class="fas fa-envelope"></i>
-                    <h3>Check Donation</h3>
-                    <p>Mail a check payable to "Joseph Charitable Trust" to our office address.</p>
-                    <a href="#contact" class="btn mt-30">Get Address</a>
+        <!-- Gallery Section -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Food Distribution">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Medical Camp">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80" alt="Education Program">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1559027615-cfa462850979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Community Event">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Volunteers">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Children Learning">
+                        <div class="gallery-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="text-center">
-                <h3>Quick Donate</h3>
-                <div class="donation-amounts">
-                    <div class="amount-option">$25</div>
-                    <div class="amount-option">$50</div>
-                    <div class="amount-option active">$100</div>
-                    <div class="amount-option">$250</div>
-                    <div class="amount-option">Other</div>
-                </div>
-                <a href="#" class="btn">Donate $100 Now</a>
-            </div>
-            <div class="transparency-section">
-                <h3 class="text-center">Transparency in Fund Utilization</h3>
-                <p class="text-center">We are committed to using your donations effectively and responsibly. Here's how your contribution is utilized:</p>
-                <div class="transparency-chart">
-                    <div class="chart-item" style="background-color: #8B4513; width: 70%">70% Program Services</div>
-                    <div class="chart-item" style="background-color: #D2691E; width: 20%">20% Administrative</div>
-                    <div class="chart-item" style="background-color: #CD853F; width: 10%">10% Fundraising</div>
-                </div>
-                <p>We undergo annual independent audits and make our financial reports publicly available to ensure complete transparency.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="section">
-        <div class="container">
-            <h2 class="section-title">Our Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Food Distribution">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Medical Camp">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2022&q=80" alt="Education Program">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559027615-cfa462850979?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" alt="Community Event">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Volunteers">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Children Learning">
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Get In Touch</h3>
-                    <p>We'd love to hear from you. Whether you have questions about our programs, want to volunteer, or need assistance, please reach out to us.</p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div>
-                                <h4>Our Office</h4>
-                                <p>123 Charity Avenue, Hope City, HC 12345</p>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>We'd love to hear from you. Whether you have questions about our programs, want to volunteer, or need assistance, please reach out to us.</p>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Our Office</h4>
+                                    <p>123 Charity Avenue, Hope City, HC 12345</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>info@josephtrust.org</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <h4>Office Hours</h4>
+                                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <div>
-                                <h4>Phone</h4>
-                                <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" placeholder="Your Name" required>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <div>
-                                <h4>Email</h4>
-                                <p>info@josephtrust.org</p>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" placeholder="Your Email" required>
                             </div>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-clock"></i>
-                            <div>
-                                <h4>Office Hours</h4>
-                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <input type="text" id="subject" class="form-control" placeholder="Subject" required>
                             </div>
-                        </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" class="form-control" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" class="form-control" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" class="form-control" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.99834562376315!3d40.719143037521976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27c9fa7c03%3A0x3caf7b7a1873d783!2sCharity%20Ave%2C%20Brooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1690904833997!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Joseph Charitable Trust Location"></iframe>
                 </div>
             </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.99834562376315!3d40.719143037521976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27c9fa7c03%3A0x3caf7b7a1873d783!2sCharity%20Ave%2C%20Brooklyn%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1690904833997!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -1435,7 +2001,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjQ0Q4NTNGIiBkPSJNMjU2IDQ4QzE0MS4xIDQ4IDQ4IDE0MS4xIDQ4IDI1NnM5My4xIDIwOCAyMDggMjA4IDIwOC05My4xIDIwOC0yMDhTMzcwLjkgNDggMjU2IDQ4em0tMjQuMiAxODUuNGMtMjEuOCA0My4zLTQzLjMgODYuNi02NS4xIDEyOS45LTMuMyA2LjYgMS42IDE0LjUgOS4xIDE0LjVoMjEuOGM0LjYgMCA4LjktMi41IDExLjItNi42bDUxLjUtMTAyLjkgNTEuNSAxMDIuOWMyLjMgNC4xIDYuNiA2LjYgMTEuMiA2LjZoMjEuOGM3LjUgMCAxMi40LTcuOSA5LjEtMTQuNS0yMS44LTQzLjMtNDMuMy04Ni42LTY1LjEtMTI5LjktMy4zLTYuNi0xMi45LTYuNi0xNi4yIDB6bTI0LjItMTE2Yy0xOS44IDAtMzYgMTYuMi0zNiAzNnMxNi4yIDM2IDM2IDM2IDM2LTE2LjIgMzYtMzYtMTYuMi0zNi0zNi0zNnptMTQ0IDI1NmMtMTkuOCAwLTM2IDE2LjItMzYgMzZzMTYuMiAzNiAzNiAzNiAzNi0xNi4yIDM2LTM2LTE2LjItMzYtMzYtMzZ6Ii8+PC9zdmc+" alt="Joseph Charitable Trust Logo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjZTZjN2UyMiIgZD0iTTI1NiA0OEMxNDEuMSA0OCA0OCAxNDEuMSA0OCAyNTZzOTMuMSAyMDggMjA4IDIwOCAyMDgtOTMuMSAyMDgtMjA4UzM3MC45IDQ4IDI1NiA0OHptLTI0LjIgMTg1LjRjLTIxLjggNDMuMy00My4zIDg2LjYtNjUuMSAxMjkuOS0zLjMgNi42IDEuNiAxNC41IDkuMSAxNC41aDIxLjhjNC42IDAgOC45LTIuNSAxMS4yLTYuNmw1MS41LTEwMi45IDUxLjUgMTAyLjljMi4zIDQuMSA2LjYgNi42IDExLjIgNi42aDIxLjhjNy41IDAgMTIuNC03LjkgOS4xLTE0LjUtMjEuOC00My4zLTQzLjMtODYuNi02NS4xLTEyOS45LTMuMy02LjYtMTIuOS02LjYtMTYuMiAwem0yNC4yLTExNmMtMTkuOCAwLTM2IDE2LjItMzYgMzZzMTYuMiAzNiAzNiAzNiAzNi0xNi4yIDM2LTM2LTE2LjItMzYtMzYtMzZ6bTE0NCAyNTZjLTE5LjggMC0zNiAxNi4yLTM2IDM2czE2LjIgMzYgMzYgMzYgMzYtMTYuMiAzNi0zNi0xNi4yLTM2LTM2LTM2eiIvPjwvc3ZnPg==" alt="Joseph Charitable Trust Logo">
                         <h3>Joseph Charitable Trust</h3>
                     </div>
                     <p>Bringing hope and changing lives through essential services, education, and community development programs since 2005.</p>
@@ -1473,20 +2039,20 @@
                 </div>
                 <div class="footer-column">
                     <h4>Contact Info</h4>
-                    <div class="contact-info">
-                        <div class="contact-item">
+                    <div class="footer-contact-info">
+                        <div class="footer-contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p></p>
+                            <p>123 Charity Avenue, Hope City, HC 12345</p>
                         </div>
-                        <div class="contact-item">
+                        <div class="footer-contact-item">
                             <i class="fas fa-phone-alt"></i>
                             <p>+1 (555) 123-4567</p>
                         </div>
-                        <div class="contact-item">
+                        <div class="footer-contact-item">
                             <i class="fas fa-envelope"></i>
                             <p>info@josephtrust.org</p>
                         </div>
-                        <div class="contact-item">
+                        <div class="footer-contact-item">
                             <i class="fas fa-clock"></i>
                             <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
                         </div>
@@ -1517,5 +2083,223 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Navigation with Enhanced Features
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const body = document.body;
+
+        // Create overlay element
+        const overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        document.body.appendChild(overlay);
+
+        // Create close button
+        const closeButton = document.createElement('button');
+        closeButton.className = 'menu-close';
+        closeButton.innerHTML = '<i class="fas fa-times"></i>';
+        closeButton.setAttribute('aria-label', 'Close navigation menu');
+        navMenu.appendChild(closeButton);
+
+        // Toggle menu function
+        function toggleMenu() {
+            const isOpening = !navMenu.classList.contains('active');
+            
+            navMenu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            
+            // Toggle hamburger icon
+            const icon = hamburger.querySelector('i');
+            if (navMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                hamburger.style.background = 'var(--accent)';
+                hamburger.setAttribute('aria-expanded', 'true');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                hamburger.style.background = 'var(--primary)';
+                hamburger.setAttribute('aria-expanded', 'false');
+            }
+
+            // Add animation class for smooth transitions
+            if (isOpening) {
+                navMenu.style.animation = 'slideInRight 0.4s ease-out';
+            } else {
+                navMenu.style.animation = 'slideOutRight 0.4s ease-in';
+            }
+        }
+
+        // Event listeners
+        hamburger.addEventListener('click', toggleMenu);
+        closeButton.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking on links
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                // Only close if it's a hash link (same page navigation)
+                if (link.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        toggleMenu();
+                        // Smooth scroll to section after menu closes
+                        setTimeout(() => {
+                            targetSection.scrollIntoView({ 
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }, 400);
+                    }
+                }
+            });
+        });
+
+        // Close menu with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 991 && navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInRight {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes slideOutRight {
+                from {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+            }
+            
+            .nav-menu {
+                animation-duration: 0.4s;
+                animation-fill-mode: both;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Simple counter animation for impact stats
+        const stats = document.querySelectorAll('.stat-number');
+        
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start).toLocaleString() + "+";
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Animate stats when they come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const stat = entry.target;
+                    const target = parseInt(stat.getAttribute('data-target'));
+                    animateValue(stat, 0, target, 2000);
+                    observer.unobserve(stat);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Set data-target attributes for stats
+        document.querySelectorAll('.stat-number').forEach((stat, index) => {
+            const values = [2500000, 15000, 50000, 2500];
+            stat.setAttribute('data-target', values[index]);
+            observer.observe(stat);
+        });
+
+        // Form submission
+        const contactForm = document.querySelector('#contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                contactForm.reset();
+            });
+        }
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you for subscribing to our newsletter!');
+                newsletterForm.reset();
+            });
+        }
+
+        // Donation amount selection
+        const amountOptions = document.querySelectorAll('.amount-option');
+        amountOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all options
+                amountOptions.forEach(opt => opt.classList.remove('active'));
+                // Add active class to clicked option
+                option.classList.add('active');
+                
+                // Update donate button text
+                const donateBtn = document.querySelector('.donation-amounts + .btn');
+                if (donateBtn && option.textContent !== 'Other') {
+                    donateBtn.textContent = `Donate $${option.textContent} Now`;
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.backdropFilter = 'blur(10px)';
+            } else {
+                header.style.background = 'white';
+                header.style.backdropFilter = 'none';
+            }
+        });
+
+        // Add focus styles for all interactive elements
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-navigation');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-navigation');
+        });
+    </script>
 </body>
 </html>
