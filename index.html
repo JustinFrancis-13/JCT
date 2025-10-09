@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #1e6598;       /* Trustworthy blue */
-            --secondary: #2c8c6b;     /* Compassionate green */
-            --accent: #e67e22;        /* Warm action orange */
-            --light: #f8f9fa;         /* Clean white */
-            --dark: #2c3e50;          /* Professional dark */
-            --text-dark: #2c3e50;     /* Readable dark text */
-            --text-light: #ffffff;    /* White text */
-            --success: #27ae60;       /* Positive green */
-            --warning: #f39c12;       /* Attention orange */
-            --danger: #e74c3c;        /* Urgent red */
-            --gray: #95a5a6;          /* Neutral gray */
+            --primary: #1e6598;      
+            --secondary: #2c8c6b;     
+            --accent: #e67e22;        
+            --light: #f8f9fa;        
+            --dark: #2c3e50;          
+            --text-dark: #2c3e50;    
+            --text-light: #ffffff;        
+            --success: #27ae60;       
+            --warning: #f39c12;       
+            --danger: #e74c3c;        
+            --gray: #95a5a6;          
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
@@ -67,7 +67,7 @@
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 60 100px;
         }
 
         .btn {
@@ -129,7 +129,6 @@
             text-align: center;
         }
 
-        /* Header */
         header {
             background-color: white;
             box-shadow: var(--shadow);
@@ -208,30 +207,45 @@
             border: none;
         }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background: linear-gradient(rgba(3, 43, 71, 0.8), rgba(150, 111, 28, 0.8)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 180px 0 100px;
+            padding: 400px 0 100px;
             text-align: center;
             margin-top: 80px;
+              display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  padding: 0; /
         }
 
         .hero h2 {
             font-size: 3.2rem;
-            margin-bottom: 20px;
-            color: white;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 40px;
+            color: rgb(239, 224, 224);
+            text-shadow:-7px 0px 4px rgb(34 207 189 / 89%);
+              display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  
         }
 
         .hero p {
             font-size: 1.3rem;
             max-width: 700px;
-            margin: 0 auto 30px;
+            margin: 0 auto 40px;
             color: white;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+              display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
         }
 
         .hero-btns {
@@ -241,7 +255,7 @@
             flex-wrap: wrap;
         }
 
-        /* About Section */
+       
         .about-content {
             display: flex;
             align-items: center;
@@ -969,7 +983,7 @@
             outline-offset: 2px;
         }
 
-        /* Skip to main content link */
+    
         .skip-link {
             position: absolute;
             top: -40px;
@@ -987,7 +1001,6 @@
             top: 0;
         }
 
-        /* Mobile Menu Styles */
         @media (max-width: 991px) {
             .hamburger {
                 display: flex;
@@ -1188,7 +1201,6 @@
             }
         }
 
-        /* Small devices (tablets, 768px to 991px) */
         @media (min-width: 768px) and (max-width: 991px) {
             .container {
                 max-width: 720px;
@@ -1206,7 +1218,6 @@
                 font-size: 2rem;
             }
             
-            /* Navigation for tablets */
             .nav-menu {
                 display: none;
             }
@@ -1247,7 +1258,6 @@
                 width: 100%;
             }
             
-            /* Layout adjustments for tablets */
             .about-content {
                 flex-direction: column;
                 gap: 40px;
@@ -1287,7 +1297,6 @@
             }
         }
 
-        /* Mobile devices (767px and down) */
         @media (max-width: 767px) {
             .container {
                 width: 92%;
@@ -1314,7 +1323,11 @@
                 z-index: 999;
                 overflow-y: auto;
             }
-            
+            .storyv{
+    
+                margin:0px;
+                padding:20px;
+            }
             .nav-menu.active {
                 right: 0;
             }
@@ -1383,7 +1396,6 @@
                 margin-bottom: 40px;
             }
             
-            /* Single column layouts for mobile */
             .about-content, .mission-vision, .contact-container {
                 flex-direction: column;
                 gap: 30px;
@@ -1393,8 +1405,8 @@
                 flex: none;
                 width: 100%;
             }
-            
-            .mission, .vision {
+
+           .mission, .vision {
                 flex: none;
                 width: 100%;
                 margin-bottom: 20px;
@@ -1422,7 +1434,6 @@
                 flex-wrap: wrap;
             }
             
-            /* Impact stats adjustments */
             .impact-stats {
                 gap: 15px;
                 justify-content: center;
@@ -1441,7 +1452,6 @@
                 font-size: 0.9rem;
             }
             
-            /* Gallery adjustments */
             .gallery-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 gap: 15px;
@@ -1450,8 +1460,6 @@
             .gallery-item {
                 height: 200px;
             }
-            
-            /* Donation amounts */
             .donation-amounts {
                 gap: 10px;
                 flex-wrap: wrap;
@@ -1465,13 +1473,11 @@
                 text-align: center;
             }
             
-            /* Transparency chart */
             .transparency-chart .chart-item {
                 font-size: 0.7rem;
                 padding: 0 5px;
             }
             
-            /* Contact form */
             .contact-form, .contact-info {
                 flex: none;
                 width: 100%;
@@ -1482,19 +1488,16 @@
                 margin-top: 30px;
             }
             
-            /* Form improvements for mobile */
             .form-control {
                 padding: 16px;
-                font-size: 16px; /* Prevents zoom on iOS */
+                font-size: 16px; 
             }
             
-            /* Prevent horizontal scrolling */
             body {
                 overflow-x: hidden;
             }
         }
 
-        /* Extra small devices (phones, 480px and down) */
         @media (max-width: 480px) {
             .hero {
                 padding: 120px 0 40px;
@@ -1551,7 +1554,6 @@
             }
         }
 
-        /* Very small devices (phones, 360px and down) */
         @media (max-width: 360px) {
             .container {
                 width: 95%;
@@ -1615,8 +1617,6 @@
                 font-size: 1.8rem;
             }
         }
-
-        /* Utility Classes */
         .mt-30 {
             margin-top: 30px;
         }
@@ -1627,15 +1627,14 @@
     </style>
 </head>
 <body>
-    <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
+    
     <header>
         <div class="container header-container">
             <div class="logo">
                 <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cGF0aCBmaWxsPSIjMWU2NTk4IiBkPSJNMjU2IDQ4QzE0MS4xIDQ4IDQ4IDE0MS4xIDQ4IDI1NnM5My4xIDIwOCAyMDggMjA4IDIwOC05My4xIDIwOC0yMDhTMzcwLjkgNDggMjU2IDQ4em0tMjQuMiAxODUuNGMtMjEuOCA0My4zLTQzLjMgODYuNi02NS4xIDEyOS45LTMuMyA2LjYgMS42IDE0LjUgOS4xIDE0LjVoMjEuOGM0LjYgMCA4LjktMi41IDExLjItNi42bDUxLjUtMTAyLjkgNTEuNSAxMDIuOWMyLjMgNC4xIDYuNiA2LjYgMTEuMiA2LjZoMjEuOGM3LjUgMCAxMi40LTcuOSA5LjEtMTQuNS0yMS44LTQzLjMtNDMuMy04Ni42LTY1LjEtMTI5LjktMy4zLTYuNi0xMi45LTYuNi0xNi4yIDB6bTI0LjItMTE2Yy0xOS44IDAtMzYgMTYuMi0zNiAzNnMxNi4yIDM2IDM2IDM2IDM2LTE2LjIgMzYtMzYtMTYuMi0zNi0zNi0zNnptMTQ0IDI1NmMtMTkuOCAwLTM2IDE2LjItMzYgMzZzMTYuMiAzNiAzNiAzNiAzNi0xNi4yIDM2LTM2LTE2LjItMzYtMzYtMzZ6Ii8+PC9zdmc+" alt="Joseph Charitable Trust Logo">
-                <h1>Joseph Charitable Trust</h1>
+                <h1>Joseph Paul Charitable Trust</h1>
             </div>
             <nav>
                 <ul class="nav-menu">
@@ -1653,8 +1652,6 @@
             </nav>
         </div>
     </header>
-
-    <!-- Home Section -->
     <section id="home" class="hero">
         <div class="container">
             <h2>Bringing Hope and Changing Lives</h2>
@@ -1666,23 +1663,44 @@
             </div>
         </div>
     </section>
-
-    <!-- Main Content -->
     <main id="main-content">
-        <!-- About Section -->
         <section id="about" class="section">
             <div class="container">
                 <h2 class="section-title">About Joseph Charitable Trust</h2>
                 <div class="about-content">
                     <div class="about-text">
                         <h3>Our Story</h3>
-                        <p>Founded in 2005, Joseph Charitable Trust began as a small community initiative in response to the devastating effects of natural disasters in our region. What started as a temporary relief effort has grown into a comprehensive charity organization serving thousands of people annually.</p>
-                        <p>Our journey began when our founders, Dr. Shiny Reddy and Dr. Ravali, witnessed the plight of families affected by floods and decided to take action. They mobilized local resources and volunteers to provide immediate assistance, and soon realized the need for sustained support in these communities.</p>
+                        <p>Founded in "  ", Joseph Charitable Trust began as a small community initiative in response to the devastating effects of natural disasters in our region. What started as a temporary relief effort has grown into a comprehensive charity organization serving thousands of people annually.</p>
+                        <p>Our journey began when our founders, Brother:Anil Reddy andSister:Rohini Reddy, witnessed the plight of families affected by floods and decided to take action. They mobilized local resources and volunteers to provide immediate assistance, and soon realized the need for sustained support in these communities.</p>
                         <p>Today, we operate in over 50 communities across three states, with a dedicated team of staff and volunteers working tirelessly to bring positive change to those who need it most.</p>
                     </div>
-                    <div class="about-image">
-                        <img src="https://media.istockphoto.com/id/1472567934/photo/god-helping-hand-concept-and-international-day-of-peace.jpg?s=612x612&w=0&k=20&c=1vqP1lkwFHQMTdaYaBXbjBIsyhWXToXEFxI4W1Zb3ps=" alt="Joseph Charitable Trust Team">
+                    <div>
+           <style>                      
+    video {
+      height:500px;
+      cursor: pointer;
+      border: 1px solid #444;
+      border-radius: 8px;
+      border-width: 10px;
+    }
+   
+    </style>  
+  <video id="myVideo">
+    <source src="JCT.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video><script>
+    const video = document.getElementById('myVideo');
+
+    video.addEventListener('click', function () {
+      if (video.paused) {
+        video.play();
+      } else {
+        video.pause();
+      }
+    });
+  </script>
                     </div>
+
                 </div>
                 <div class="mission-vision">
                     <div class="mission">
@@ -1699,7 +1717,6 @@
             </div>
         </section>
 
-        <!-- Services Section -->
         <section id="work" class="section services">
             <div class="container">
                 <h2 class="section-title">Our Programs & Services</h2>
@@ -1738,14 +1755,13 @@
             </div>
         </section>
 
-        <!-- Impact Section -->
         <section class="section">
             <div class="container">
                 <h2 class="section-title">Our Impact</h2>
                 <div class="impact-stats">
                     <div class="stat">
                         <i class="fas fa-utensils"></i>
-                        <span class="stat-number">2.5M+</span>
+                        <span class="stat-number">1500+</span>
                         <span class="stat-label">Meals Served</span>
                     </div>
                     <div class="stat">
@@ -1767,27 +1783,26 @@
             </div>
         </section>
 
-        <!-- Team Section -->
         <section class="section team">
             <div class="container">
                 <h2 class="section-title">Our Leadership Team</h2>
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1061&q=80" alt="Dr. Shiny Reddy">
+                            <img src="" alt="Dr. Shiny Reddy">
                         </div>
                         <div class="member-info">
-                            <h3>Dr. Shiny Reddy</h3>
+                            <h3>Joseph Paul</h3>
                             <p class="member-role">Co-Founder & Executive Director</p>
                             <p>With over 20 years of experience in social work, Dr. Shiny Reddy leads our strategic initiatives and community partnerships.</p>
                         </div>
                     </div>
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Dr. Ravali">
+                            <img src="" alt="Dr. Ravali">
                         </div>
                         <div class="member-info">
-                            <h3>Dr. Ravali</h3>
+                            <h3>Anil Reddy</h3>
                             <p class="member-role">Co-Founder & Operations Director</p>
                             <p>Dr. Ravali oversees our daily operations and ensures the efficient delivery of all our programs and services.</p>
                         </div>
@@ -1797,7 +1812,7 @@
                             <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80" alt="Priya Sharma">
                         </div>
                         <div class="member-info">
-                            <h3>Priya Sharma</h3>
+                            <h3>Rohini Reddy</h3>
                             <p class="member-role">Program Director</p>
                             <p>Priya manages our education and healthcare initiatives, bringing innovative approaches to community development.</p>
                         </div>
@@ -1806,7 +1821,6 @@
             </div>
         </section>
 
-        <!-- Get Involved Section -->
         <section id="involve" class="section">
             <div class="container">
                 <h2 class="section-title">Get Involved</h2>
@@ -1832,8 +1846,6 @@
                 </div>
             </div>
         </section>
-
-        <!-- Donate Section -->
         <section id="donate" class="section services">
             <div class="container">
                 <h2 class="section-title">Support Our Mission</h2>
@@ -1860,13 +1872,13 @@
                 <div class="text-center">
                     <h3>Quick Donate</h3>
                     <div class="donation-amounts">
-                        <button class="amount-option">$25</button>
-                        <button class="amount-option">$50</button>
-                        <button class="amount-option active">$100</button>
-                        <button class="amount-option">$250</button>
+                        <button class="amount-option">500</button>
+                        <button class="amount-option">1000</button>
+                        <button class="amount-option active">5000</button>
+                        <button class="amount-option">2500</button>
                         <button class="amount-option">Other</button>
                     </div>
-                    <a href="#" class="btn">Donate $100 Now</a>
+                    <a href="#" class="btn">Donate 500 Now</a>
                 </div>
                 <div class="transparency-section">
                     <h3 class="text-center">Transparency in Fund Utilization</h3>
@@ -1881,7 +1893,6 @@
             </div>
         </section>
 
-        <!-- Gallery Section -->
         <section id="gallery" class="section">
             <div class="container">
                 <h2 class="section-title">Our Gallery</h2>
@@ -1926,7 +1937,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="container">
                 <h2 class="section-title">Contact Us</h2>
@@ -1939,14 +1949,14 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div>
                                     <h4>Our Office</h4>
-                                    <p>123 Charity Avenue, Hope City, HC 12345</p>
+                                    <p>#LOCATION HERE</p>
                                 </div>
                             </div>
                             <div class="contact-item">
                                 <i class="fas fa-phone-alt"></i>
                                 <div>
                                     <h4>Phone</h4>
-                                    <p>+1 (555) 123-4567</p>
+                                    <p>+91 12345-6789</p>
                                 </div>
                             </div>
                             <div class="contact-item">
@@ -1960,7 +1970,7 @@
                                 <i class="fas fa-clock"></i>
                                 <div>
                                     <h4>Office Hours</h4>
-                                    <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                    <p>#DAY - #DAY: EX: 9:00 AM - 5:00 PM</p>
                                 </div>
                             </div>
                         </div>
@@ -1995,7 +2005,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -2042,11 +2051,11 @@
                     <div class="footer-contact-info">
                         <div class="footer-contact-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>123 Charity Avenue, Hope City, HC 12345</p>
+                            <p>#LOCATION HERE</p>
                         </div>
                         <div class="footer-contact-item">
                             <i class="fas fa-phone-alt"></i>
-                            <p>+1 (555) 123-4567</p>
+                            <p>+91 123-4567</p>
                         </div>
                         <div class="footer-contact-item">
                             <i class="fas fa-envelope"></i>
@@ -2054,7 +2063,7 @@
                         </div>
                         <div class="footer-contact-item">
                             <i class="fas fa-clock"></i>
-                            <p>Mon-Fri: 9:00 AM - 5:00 PM</p>
+                            <p>#DAY - #DAY: 9:00 AM - 5:00 PM</p>
                         </div>
                     </div>
                 </div>
@@ -2085,24 +2094,20 @@
     </footer>
 
     <script>
-        // Mobile Navigation with Enhanced Features
         const hamburger = document.querySelector('.hamburger');
         const navMenu = document.querySelector('.nav-menu');
         const body = document.body;
 
-        // Create overlay element
         const overlay = document.createElement('div');
         overlay.className = 'menu-overlay';
         document.body.appendChild(overlay);
 
-        // Create close button
         const closeButton = document.createElement('button');
         closeButton.className = 'menu-close';
         closeButton.innerHTML = '<i class="fas fa-times"></i>';
         closeButton.setAttribute('aria-label', 'Close navigation menu');
         navMenu.appendChild(closeButton);
 
-        // Toggle menu function
         function toggleMenu() {
             const isOpening = !navMenu.classList.contains('active');
             
@@ -2110,7 +2115,6 @@
             overlay.classList.toggle('active');
             body.classList.toggle('menu-open');
             
-            // Toggle hamburger icon
             const icon = hamburger.querySelector('i');
             if (navMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -2124,7 +2128,6 @@
                 hamburger.setAttribute('aria-expanded', 'false');
             }
 
-            // Add animation class for smooth transitions
             if (isOpening) {
                 navMenu.style.animation = 'slideInRight 0.4s ease-out';
             } else {
@@ -2132,15 +2135,12 @@
             }
         }
 
-        // Event listeners
         hamburger.addEventListener('click', toggleMenu);
         closeButton.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
 
-        // Close menu when clicking on links
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', (e) => {
-                // Only close if it's a hash link (same page navigation)
                 if (link.getAttribute('href').startsWith('#')) {
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
@@ -2148,7 +2148,6 @@
                     
                     if (targetSection) {
                         toggleMenu();
-                        // Smooth scroll to section after menu closes
                         setTimeout(() => {
                             targetSection.scrollIntoView({ 
                                 behavior: 'smooth',
@@ -2160,21 +2159,18 @@
             });
         });
 
-        // Close menu with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && navMenu.classList.contains('active')) {
                 toggleMenu();
             }
         });
 
-        // Handle window resize
         window.addEventListener('resize', () => {
             if (window.innerWidth > 991 && navMenu.classList.contains('active')) {
                 toggleMenu();
             }
         });
 
-        // Add CSS animations
         const style = document.createElement('style');
         style.textContent = `
             @keyframes slideInRight {
@@ -2206,7 +2202,6 @@
         `;
         document.head.appendChild(style);
 
-        // Simple counter animation for impact stats
         const stats = document.querySelectorAll('.stat-number');
         
         function animateValue(obj, start, end, duration) {
@@ -2221,8 +2216,6 @@
             };
             window.requestAnimationFrame(step);
         }
-
-        // Animate stats when they come into view
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -2234,14 +2227,14 @@
             });
         }, { threshold: 0.5 });
 
-        // Set data-target attributes for stats
+      
         document.querySelectorAll('.stat-number').forEach((stat, index) => {
-            const values = [2500000, 15000, 50000, 2500];
+            const values = [1500, 150, 5000, 2500];
             stat.setAttribute('data-target', values[index]);
             observer.observe(stat);
         });
 
-        // Form submission
+      
         const contactForm = document.querySelector('#contact-form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -2251,7 +2244,7 @@
             });
         }
 
-        // Newsletter form submission
+     
         const newsletterForm = document.querySelector('.newsletter-form');
         if (newsletterForm) {
             newsletterForm.addEventListener('submit', (e) => {
@@ -2261,16 +2254,14 @@
             });
         }
 
-        // Donation amount selection
         const amountOptions = document.querySelectorAll('.amount-option');
         amountOptions.forEach(option => {
             option.addEventListener('click', () => {
-                // Remove active class from all options
+               
                 amountOptions.forEach(opt => opt.classList.remove('active'));
-                // Add active class to clicked option
+                
                 option.classList.add('active');
                 
-                // Update donate button text
                 const donateBtn = document.querySelector('.donation-amounts + .btn');
                 if (donateBtn && option.textContent !== 'Other') {
                     donateBtn.textContent = `Donate $${option.textContent} Now`;
@@ -2278,7 +2269,6 @@
             });
         });
 
-        // Header scroll effect
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
@@ -2290,14 +2280,13 @@
             }
         });
 
-        // Add focus styles for all interactive elements
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Tab') {
                 document.body.classList.add('keyboard-navigation');
             }
         });
 
-        document.addEventListener('mousedown', function() {
+        document.addEventListener('mousedown', function() { 
             document.body.classList.remove('keyboard-navigation');
         });
     </script>
